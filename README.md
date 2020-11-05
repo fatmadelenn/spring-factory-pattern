@@ -4,14 +4,14 @@ Factory design pattern is a structure based on creating a class.
 We're going to create a Car interface and concrete classes implementing the Car interface.(Cabrio, Sedan, Hatchback)
 A factory class CarFactory is defined as a next step. (This class to get a Car object)
 
-Step 1
+#Step 1
 Create an interface.
 ```
 public interface Car {
     String getType();
 }
 ```
-Step 2
+#Step 2
 Create concrete classes(Cabrio, Sedan, Hatchback) implementing the Car interface.
 
 ```@Component
@@ -26,7 +26,7 @@ public class Cabrio implements Car{
 .
 .
 
-Step 3
+#Step 3
 Create a Factory to generate object of concrete class based. There is a list of cars and a hashmap in this factory class.
 In this hashmap put car class and list of cars.
 
@@ -50,7 +50,7 @@ public class CarFactory {
     }
 }
 ```
-Step 4
+#Step 4
 When all this is set, we'll create a CarService class that will provide us with an implementation of CarFactory depending on the argument that we supply to the getCar() method:
 
 ```
@@ -64,7 +64,7 @@ public class CarService {
     }
 }
 ```
-Step 5
+#Step 5
 Publish a rest controller. 
 
 ```
@@ -78,13 +78,13 @@ public class CarController {
     }
 }
 ```
-Run it
+#Run it
 >gradlew build
 
-Testing
+#Testing
 > curl -X GET http://localhost:8080/api/car/{name} 
 >
-Example: 
+#Example: 
 >curl -X GET http://localhost:8080/api/car/cabrio
 
 Example
